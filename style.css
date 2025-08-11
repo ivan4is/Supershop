@@ -1,1 +1,32 @@
+body {
+ background: #fff;
+ color: #000;
+ font-family: Arial, sans-serif;
+}
+header {
+ background: #000;
+ color: #fff;
+}
+footer {
+ background: #000;
+ color: #fff;
+}
+main {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+ justify-content: center;
+ padding: 1rem 0;
+}
+.card {
+ border: 1px solid #ddd;
+ width: 260px;
+}
+.card-title {
+ font-weight: bold;
+}
+.price {
+ font-size: 1.2em;
+ margin-top: 10px;
+}
 
