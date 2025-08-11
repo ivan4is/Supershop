@@ -19,7 +19,7 @@ main {
 }
 
 .card {
-  padding: 32px;
+  margin: 32px;
   flex: 1 1 260px; 
   max-width: 320px; 
   border: 1px solid #ddd;
