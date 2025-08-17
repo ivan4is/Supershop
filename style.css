@@ -81,7 +81,21 @@ footer {
   margin-top: 20px;
 }
 
-.themeToggle{
-position:absolute;
-right:300px
-  
+#themeToggle {
+  position: absolute;
+  top: 10px;           
+  right: 10px;         
+  padding: 8px 16px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#themeToggle:hover {
+  background-color: #e55b00;
+  transform: translateY(-2px);
+}
