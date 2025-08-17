@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoSalon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <span class="navbar-brand">🚗 AutoSalon</span>
+        <div>
+          <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#cartModal">
+            🛒 Кошик (<span class="total-count">0</span>)
+          </button>
+          <button class="clear-cart btn btn-warning">🗑️ Очистити</button>
+        </div>
+      </div>
+    </nav>
 
+    <header>
+      <h1>🚗 AutoSalon</h1>
+      <p>Сучасні автомобілі за найкращими цінами</p>
+    </header>
+
+    <main>
+      <div class="car-card">
+        <img src="https://i.postimg.cc/fRZ5w7dq/audi.jpg" alt="BMW X5" />
+        <div class="car-card-body">
+          <h5>BMW X5</h5>
+          <p>2022 • 3.0L • 340 к.с.</p>
+          <div class="car-price">$65,000</div>
+          <button class="add-to-cart" data-name="BMW X5" data-price="65000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/fRZ5w7dq/audi.jpg" alt="Audi A6" />
+        <div class="car-card-body">
+          <h5>Audi A6</h5>
+          <p>2021 • 2.0L • 245 к.с.</p>
+          <div class="car-price">$45,000</div>
+          <button class="add-to-cart" data-name="Audi A6" data-price="45000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/tCm1Vhmt/mercedes.jpg" alt="Mercedes E-Class" />
+        <div class="car-card-body">
+          <h5>Mercedes E-Class</h5>
+          <p>2020 • 2.0L • 211 к.с.</p>
+          <div class="car-price">$50,000</div>
+          <button class="add-to-cart" data-name="Mercedes E-Class" data-price="50000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/cHj7JdW9/tesla.jpg" alt="Tesla Model S" />
+        <div class="car-card-body">
+          <h5>Tesla Model S</h5>
+          <p>2023 • Електро • 670 к.с.</p>
+          <div class="car-price">$90,000</div>
+          <button class="add-to-cart" data-name="Tesla Model S" data-price="90000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/QM5xM4yK/toyota.jpg" alt="Toyota Camry" />
+        <div class="car-card-body">
+          <h5>Toyota Camry</h5>
+          <p>2022 • 2.5L • 206 к.с.</p>
+          <div class="car-price">$30,000</div>
+          <button class="add-to-cart" data-name="Toyota Camry" data-price="30000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/ryXwWqDt/ford.jpg" alt="Ford Mustang" />
+        <div class="car-card-body">
+          <h5>Ford Mustang</h5>
+          <p>2021 • 5.0L • 450 к.с.</p>
+          <div class="car-price">$55,000</div>
+          <button class="add-to-cart" data-name="Ford Mustang" data-price="55000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/ZRZ1fbCp/honda.jpg" alt="Honda Accord" />
+        <div class="car-card-body">
+          <h5>Honda Accord</h5>
+          <p>2020 • 1.5L • 192 к.с.</p>
+          <div class="car-price">$25,000</div>
+          <button class="add-to-cart" data-name="Honda Accord" data-price="25000">
+            Купити
+          </button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="https://i.postimg.cc/0Q9D0mGv/lexus.jpg" alt="Lexus RX" />
+        <div class="car-card-body">
+          <h5>Lexus RX</h5>
+          <p>2022 • 3.5L • 295 к.с.</p>
+          <div class="car-price">$48,000</div>
+          <button class="add-to-cart" data-name="Lexus RX" data-price="48000">
+            Купити
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">🛒 Ваш кошик</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="show-cart"></div>
+            <div class="cart-total text-right">
+              <strong>Загальна сума: $<span class="total-cart">0</span></strong>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+            <button type="button" class="btn btn-success">Оформити замовлення</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 AutoSalon. Всі права захищено.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+// Shopping Cart API (адаптований для роботи без sessionStorage)
+var shoppingCart = (function() {
+  var cart = [];
+  
+  function Item(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+  }
+  
+  var obj = {};
+  
+  obj.addItemToCart = function(name, price, count) {
+    for(var i = 0; i < cart.length; i++) {
+      if(cart[i].name === name) {
+        cart[i].count++;
+        return;
+      }
+    }
+    var item = new Item(name, price, count || 1);
+    cart.push(item);
+  }
+  
+  obj.setCountForItem = function(name, count) {
+    for(var i = 0; i < cart.length; i++) {
+      if (cart[i].name === name) {
+        cart[i].count = count;
+        break;
+      }
+    }
+  };
+  
+  obj.removeItemFromCart = function(name) {
+    for(var i = 0; i < cart.length; i++) {
+      if(cart[i].name === name) {
+        cart[i].count--;
+        if(cart[i].count === 0) {
+          cart.splice(i, 1);
+        }
+        break;
+      }
+    }
+  }
+
+  obj.removeItemFromCartAll = function(name) {
+    for(var i = 0; i < cart.length; i++) {
+      if(cart[i].name === name) {
+        cart.splice(i, 1);
+        break;
+      }
+    }
+  }
+
+  obj.clearCart = function() {
+    cart = [];
+  }
+
+  obj.totalCount = function() {
+    var totalCount = 0;
+    for(var i = 0; i < cart.length; i++) {
+      totalCount += cart[i].count;
+    }
+    return totalCount;
+  }
+
+  obj.totalCart = function() {
+    var totalCart = 0;
+    for(var i = 0; i < cart.length; i++) {
+      totalCart += cart[i].price * cart[i].count;
+    }
+    return Number(totalCart.toFixed(2));
+  }
+
+  obj.listCart = function() {
+    var cartCopy = [];
+    for(var i = 0; i < cart.length; i++) {
+      var item = cart[i];
+      var itemCopy = {};
+      for(var p in item) {
+        itemCopy[p] = item[p];
+      }
+      itemCopy.total = Number(item.price * item.count).toFixed(2);
+      cartCopy.push(itemCopy);
+    }
+    return cartCopy;
+  }
+
+  return obj;
+})();
+
+// Event Handlers
+$(document).ready(function() {
+  // Add item
+  $('.add-to-cart').click(function(event) {
+    event.preventDefault();
+    var name = $(this).data('name');
+    var price = Number($(this).data('price'));
+    shoppingCart.addItemToCart(name, price, 1);
+    displayCart();
+    
+    // Show notification
+    $(this).text('Додано!').addClass('btn-success').removeClass('add-to-cart');
+    setTimeout(() => {
+      $(this).text('Купити').removeClass('btn-success').addClass('add-to-cart');
+    }, 1000);
+  });
+
+  // Clear items
+  $('.clear-cart').click(function() {
+    if(confirm('Ви впевнені, що хочете очистити кошик?')) {
+      shoppingCart.clearCart();
+      displayCart();
+    }
+  });
+
+  // Delete item button
+  $(document).on("click", ".delete-item", function(event) {
+    var name = $(this).data('name');
+    shoppingCart.removeItemFromCartAll(name);
+    displayCart();
+  });
+
+  // -1
+  $(document).on("click", ".minus-item", function(event) {
+    var name = $(this).data('name');
+    shoppingCart.removeItemFromCart(name);
+    displayCart();
+  });
+
+  // +1
+  $(document).on("click", ".plus-item", function(event) {
+    var name = $(this).data('name');
+    var price = $(this).data('price');
+    shoppingCart.addItemToCart(name, price);
+    displayCart();
+  });
+
+  // Item count input
+  $(document).on("change", ".item-count", function(event) {
+    var name = $(this).data('name');
+    var count = Number($(this).val());
+    shoppingCart.setCountForItem(name, count);
+    displayCart();
+  });
+
+  displayCart();
+});
+
+function displayCart() {
+  var cartArray = shoppingCart.listCart();
+  var output = "";
+  
+  if(cartArray.length === 0) {
+    output = '<div class="empty-cart">Ваш кошик порожній 🛒</div>';
+  } else {
+    for(var i = 0; i < cartArray.length; i++) {
+      output += `
+        <div class="cart-item row align-items-center">
+          <div class="col-md-4">
+            <strong>${cartArray[i].name}</strong>
+          </div>
+          <div class="col-md-2 text-center">
+            $${cartArray[i].price}
+          </div>
+          <div class="col-md-3">
+            <div class="btn-group" role="group">
+              <button class="btn btn-sm btn-outline-primary minus-item" data-name="${cartArray[i].name}" data-price="${cartArray[i].price}">-</button>
+              <input type="number" class="form-control form-control-sm item-count" data-name="${cartArray[i].name}" value="${cartArray[i].count}" min="1" style="width: 60px; text-align: center;">
+              <button class="btn btn-sm btn-outline-primary plus-item" data-name="${cartArray[i].name}" data-price="${cartArray[i].price}">+</button>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>$${cartArray[i].total}</strong>
+          </div>
+          <div class="col-md-1">
+            <button class="btn btn-sm btn-danger delete-item" data-name="${cartArray[i].name}">×</button>
+          </div>
+        </div>
+      `;
+    }
+  }
+  
+  $('.show-cart').html(output);
+  $('.total-cart').html(shoppingCart.totalCart());
+  $('.total-count').html(shoppingCart.totalCount());
+}
+    </script>
+  </body>
+</html>
