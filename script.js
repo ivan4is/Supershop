@@ -224,4 +224,3 @@ function displayCart() {
   $('.total-cart').html(shoppingCart.totalCart());
   $('.total-count').html(shoppingCart.totalCount());
 }
-
