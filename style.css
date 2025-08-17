@@ -81,28 +81,3 @@ footer {
   margin-top: 20px;
 }
 
-.dark-mode {
-  background: #111;
-  color: #eee;
-}
-
-.dark-mode header {
-  background: #fff;
-  color: #000;
-}
-
-.dark-mode footer {
-  background: #fff;
-  color: #000;
-}
-
-.dark-mode .card {
-  background: #222;
-  color: #eee;
-  border: 1px solid #444;
-}
-
-.dark-mode .card button {
-  background: #fff;
-  color: #000;
-}
