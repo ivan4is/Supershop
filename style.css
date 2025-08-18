@@ -162,20 +162,26 @@
         font-style: italic;
         padding: 30px;
       }
+
 #themeBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 6px 12px;
-  background-color: #555;
-  color: white;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 #themeBtn:hover {
-  background-color: #333;
+  background: linear-gradient(135deg, #5aa0f2, #468cd1);
+  transform: scale(1.05);
 }
 
+#themeBtn:active {
+  transform: scale(0.95);
+}
 
