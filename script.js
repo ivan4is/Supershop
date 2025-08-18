@@ -184,3 +184,20 @@ function displayCart() {
   $('.total-cart').html(shoppingCart.totalCart());
   $('.total-count').html(shoppingCart.totalCount());
 }
+
+let dark = false;
+document.getElementById("themeBtn").onclick = function() {
+  if(dark == false){
+    document.body.style.backgroundColor = "gray";
+    document.body.style.color = "white";
+    document.getElementById("themeBtn").innerText = "Light Mode";
+    dark = true;
+  } else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+    document.getElementById("themeBtn").innerText = "Dark Mode";
+    dark = false;
+  }
+}
+
+
